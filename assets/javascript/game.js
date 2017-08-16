@@ -8,7 +8,7 @@
 
 // Reset Game
 
-var thoughts = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var thoughts = "abcdefghijklmnopqrstuvwxyz".split("");
 var wins = 0;
 var losses = 0;
 
@@ -39,22 +39,26 @@ document.onkeyup = function(event) {
 
 	if (event.key === computerGuess) {
 		wins++;
-		totalGuess = 10;
-		userGuess = [];
+		reset();
 	}
 
+	else {
 		// Subtract 1 from total Guesses
-	totalGuess--;
+		totalGuess--;
 		// totalGuess = totalGuess -1
 		// totalGuess -= 1
+	}
 
 	if (totalGuess < 1) {
 		losses++;
-		totalGuess = 10;
-		userGuess = [];
+		reset();
 	}
 
-
+function reset() {
+		totalGuess = 10;
+		userGuess = [];
+		computerGuess = thoughts[Math.floor(Math.random() * thoughts.length)];
+}
 
 	// 
 	document.getElementById("wins").innerHTML = wins;
