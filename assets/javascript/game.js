@@ -52,13 +52,14 @@ document.onkeyup = function(event) {
 	if (totalGuess < 1) {
 		losses++;
 		reset();
-	}
+	};
 
 function reset() {
 		totalGuess = 10;
 		userGuess = [];
 		computerGuess = thoughts[Math.floor(Math.random() * thoughts.length)];
-}
+		console.log(computerGuess);
+};
 
 	// 
 	document.getElementById("wins").innerHTML = wins;
@@ -68,4 +69,4 @@ function reset() {
 	document.getElementById("user-text").innerHTML = userGuess.join();
 	// send event.key number of presses to totalGuess (10)
 	document.getElementById("guess-left").innerHTML = totalGuess;
-}
+};
