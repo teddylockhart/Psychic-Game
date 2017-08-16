@@ -41,7 +41,6 @@ document.onkeyup = function(event) {
 		wins++;
 		totalGuess = 10;
 		userGuess = [];
-
 	}
 
 		// Subtract 1 from total Guesses
@@ -65,4 +64,4 @@ document.onkeyup = function(event) {
 	document.getElementById("user-text").innerHTML = userGuess.join();
 	// send event.key number of presses to totalGuess (10)
 	document.getElementById("guess-left").innerHTML = totalGuess;
-};
+}
